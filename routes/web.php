@@ -15,4 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 */
+session()->flash('success', 'This is a success alert—check it out!');
+session()->flash('danger', 'This is a danger alert—check it out!');
+session()->flash('warning', 'This is a warning alert—check it out!');
+session()->flash('info', 'This is a info alert—check it out!');
+
 Route::get('/', 'PagesController@root')->name('root');
+
+Auth::routes();
+
