@@ -47,3 +47,8 @@ Route::get('email/verify/{id}', 'Auth\VerificationController@verify')->name('ver
 Route::get('email/resend', 'Auth\VerificationController@resend')->name('verification.resend');
 
 Route::resource('users', 'UsersController', ['only' => ['show', 'update', 'edit']]);
+
+// auth 中间件代表需要登录，verified中间件代表需要经过邮箱验证
+Route::group(['middleware' => ['auth', 'verified']], function() {
+    Route::get('user/addresses', 'UserAddressesController@index')->name('user.addresses.index');
+});

@@ -29,6 +29,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="{{ route('users.show', Auth::id()) }}">个人中心</a>
                         <a class="dropdown-item" href="{{ route('users.edit', Auth::id()) }}">编辑资料</a>
+                        <a href="{{ route('user.addresses.index') }}" class="dropdown-item">收货地址</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" id="logout" href="#" onclick="event.preventDefault();document.getElementById('logout-form').submit();">退出登录</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
