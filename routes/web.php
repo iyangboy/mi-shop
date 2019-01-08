@@ -26,6 +26,8 @@ session()->flash('info', 'This is a info alert—check it out!');
 // Route::get('/', 'PagesController@root')->name('root');
 Route::redirect('/', '/products')->name('root');
 Route::get('products', 'ProductsController@index')->name('products.index');
+Route::get('products', 'ProductsController@index')->name('products.index');
+Route::get('products/{product}', 'ProductsController@show')->name('products.show');
 
 // Auth::routes();
 // 用户身份验证相关的路由
