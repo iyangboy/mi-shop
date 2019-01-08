@@ -23,7 +23,9 @@ session()->flash('warning', 'This is a warning alert—check it out!');
 session()->flash('info', 'This is a info alert—check it out!');
 */
 
-Route::get('/', 'PagesController@root')->name('root');
+// Route::get('/', 'PagesController@root')->name('root');
+Route::redirect('/', '/products')->name('root');
+Route::get('products', 'ProductsController@index')->name('products.index');
 
 // Auth::routes();
 // 用户身份验证相关的路由
