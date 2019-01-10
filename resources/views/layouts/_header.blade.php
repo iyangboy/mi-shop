@@ -34,8 +34,9 @@
                             {{ Auth::user()->name }}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('users.show', Auth::id()) }}">个人中心</a>
-                            <a class="dropdown-item" href="{{ route('users.edit', Auth::id()) }}">编辑资料</a>
+                            <a href="{{ route('orders.index') }}" class="dropdown-item">我的订单</a>
+                            <a href="{{ route('users.show', Auth::id()) }}" class="dropdown-item">个人中心</a>
+                            <a href="{{ route('users.edit', Auth::id()) }}" class="dropdown-item">编辑资料</a>
                             <a href="{{ route('products.favorites') }}" class="dropdown-item">我的收藏</a>
                             <a href="{{ route('user_addresses.index') }}" class="dropdown-item">收货地址</a>
                             <div class="dropdown-divider"></div>
@@ -46,7 +47,7 @@
                             </form>
                         </div>
                     </li>
-                @endguest
+            @endguest
             <!-- 登录注册链接结束 -->
             </ul>
         </div>
