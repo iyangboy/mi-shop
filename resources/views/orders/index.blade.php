@@ -37,10 +37,10 @@
                                                             </a>
                                                         </div>
                                                         <div>
-                        <span class="product-title">
-                           <a target="_blank"
-                              href="{{ route('products.show', [$item->product_id]) }}">{{ $item->product->title }}</a>
-                        </span>
+                                                            <span class="product-title">
+                                                                <a target="_blank"
+                                                                   href="{{ route('products.show', [$item->product_id]) }}">{{ $item->product->title }}</a>
+                                                            </span>
                                                             <span
                                                                 class="sku-title">{{ $item->productSku->title }}</span>
                                                         </div>
@@ -67,9 +67,18 @@
                                                                 否则订单将自动关闭
                                                             @endif
                                                         </td>
-                                                        <td rowspan="{{ count($order->items) }}" class="text-center"><a
-                                                                class="btn btn-primary btn-sm"
-                                                                href="{{ route('orders.show', ['order' => $order->id]) }}">查看订单</a>
+                                                        <td rowspan="{{ count($order->items) }}" class="text-center">
+                                                            <a class="btn btn-primary btn-sm"
+                                                               href="{{ route('orders.show', ['order' => $order->id]) }}">查看订单</a>
+                                                            <!-- 评价入口开始 -->
+                                                            @if($order->paid_at)
+                                                                <br>
+                                                                <a class="btn btn-success btn-sm" style="margin-top: 5px;"
+                                                                   href="{{ route('orders.review.show', ['order' => $order->id]) }}">
+                                                                    {{ $order->reviewed ? '查看评价' : '评价' }}
+                                                                </a>
+                                                            @endif
+                                                            <!-- 评价入口结束 -->
                                                         </td>
                                                     @endif
                                                 </tr>
