@@ -23,6 +23,14 @@ session()->flash('warning', 'This is a warning alert—check it out!');
 session()->flash('info', 'This is a info alert—check it out!');
 */
 
+Route::get('alipay', function() {
+    return app('alipay')->web([
+        'out_trade_no' => time(),
+        'total_amount' => '1',
+        'subject' => 'test subject - 测试',
+    ]);
+});
+
 // Route::get('/', 'PagesController@root')->name('root');
 Route::redirect('/', '/products')->name('root');
 Route::get('products', 'ProductsController@index')->name('products.index');
