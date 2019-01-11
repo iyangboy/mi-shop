@@ -2,6 +2,11 @@
 
 namespace App\Providers;
 
+use App\Events\OrderPaid;
+use App\Listeners\EmailVerified;
+use App\Listeners\SendOrderPaidMail;
+use App\Listeners\UpdateProductSoldCount;
+use Illuminate\Auth\Events\Verified;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
@@ -18,8 +23,12 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
-         \Illuminate\Auth\Events\Verified::class => [
-            \App\Listeners\EmailVerified::class,
+        Verified::class   => [
+            EmailVerified::class,
+        ],
+        OrderPaid::class  => [
+            UpdateProductSoldCount::class,
+            SendOrderPaidMail::class,
         ],
     ];
 
