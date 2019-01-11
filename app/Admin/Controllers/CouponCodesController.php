@@ -88,6 +88,9 @@ class CouponCodesController extends Controller
         $grid->total('总量');
         $grid->used('已用');
         */
+        $grid->column('usage', '用量')->display(function ($value) {
+            return "{$this->used} / {$this->total}";
+        });
         $grid->enabled('是否启用')->display(function ($value) {
             return $value ? '是' : '否';
         });
