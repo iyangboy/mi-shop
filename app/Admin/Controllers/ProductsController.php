@@ -2,14 +2,9 @@
 
 namespace App\Admin\Controllers;
 
-use App\Models\Category;
 use App\Models\Product;
-use App\Http\Controllers\Controller;
-use Encore\Admin\Controllers\HasResourceActions;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
-use Encore\Admin\Layout\Content;
-use Encore\Admin\Show;
 
 class ProductsController extends CommonProductsController
 {
