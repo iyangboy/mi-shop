@@ -48,6 +48,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a href="{{ route('orders.index') }}" class="dropdown-item">我的订单</a>
+                            <a href="{{ route('installments.index') }}" class="dropdown-item">分期付款</a>
                             <a href="{{ route('users.show', Auth::id()) }}" class="dropdown-item">个人中心</a>
                             <a href="{{ route('users.edit', Auth::id()) }}" class="dropdown-item">编辑资料</a>
                             <a href="{{ route('products.favorites') }}" class="dropdown-item">我的收藏</a>
