@@ -17,9 +17,11 @@ class Product extends Model
     ];
 
     protected $fillable = [
-        'title', 'description', 'image', 'on_sale',
-        'rating', 'sold_count', 'review_count', 'price',
         'type',
+        'title',
+        'long_title', // 长标题
+        'description', 'image', 'on_sale',
+        'rating', 'sold_count', 'review_count', 'price',
     ];
 
     protected $casts = [
