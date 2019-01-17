@@ -228,6 +228,9 @@ class OrderService
                 throw new InvalidRequestException('该商品库存不足');
             }
 
+            // 当完成下单逻辑时扣减 Redis 中的值
+            \Redis::decr('seckill_sku_' . $sku->id);
+
             return $order;
         });
         // 秒杀订单的自动关闭时间与普通订单不同

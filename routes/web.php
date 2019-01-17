@@ -25,7 +25,8 @@ Route::get('alipay', function () {
     ]);
 });
 */
-
+// 秒杀商品-当秒杀商品有剩余库存时才校验登录凭证
+Route::post('seckill_orders', 'OrdersController@seckill')->name('seckill_orders.store');
 
 // Route::get('/', 'PagesController@root')->name('root');
 Route::redirect('/', '/products')->name('root');
@@ -104,7 +105,7 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::get('installments/alipay/return', 'InstallmentsController@alipayReturn')->name('installments.alipay.return');
 
     // 秒杀商品
-    Route::post('seckill_orders', 'OrdersController@seckill')->name('seckill_orders.store');
+    // Route::post('seckill_orders', 'OrdersController@seckill')->name('seckill_orders.store');
 });
 Route::post('installments/alipay/notify', 'InstallmentsController@alipayNotify')->name('installments.alipay.notify');
 
