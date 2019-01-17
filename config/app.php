@@ -5,6 +5,9 @@ return [
     // 关闭未支付订单-延迟时间 秒
     'order_ttl' => 1800,
 
+    // 秒杀订单支付时间 秒
+    'seckill_order_ttl' => 600,
+
     // ngrok
     'ngrok_url' => env('NGROK_URL'),
 
