@@ -11,16 +11,16 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app" class="{{ route_class() }}-page">
-        @include('layouts._header')
-        <div class="container">
-            @include('shared._messages')
-            @yield('content')
-        </div>
-        @include('layouts._footer')
+<div id="app" class="{{ route_class() }}-page">
+    @include('layouts._header')
+    <div class="container">
+        @include('shared._messages')
+        @yield('content')
     </div>
-    <!-- JS 脚本 -->
-    <script src="{{ mix('js/app.js') }}"></script>
-    @yield('scriptsAfterJs')
+    @include('layouts._footer')
+</div>
+<!-- JS 脚本 -->
+<script src="{{ mix('js/app.js') }}"></script>
+@yield('scriptsAfterJs')
 </body>
 </html>
