@@ -1,4 +1,36 @@
 <?php
+Route::get('/test1', function () {
+    $str1 = 'This is C programming text';
+    $str2 = 'this is a text for C programming';
+    $str1 = trim($str1);
+    $str2 = trim($str2);
+    if (empty($str1) || empty($str2)) {
+        return '请输入正确的字符串';
+    }
+    $str1_array = explode(' ', $str1);
+    $str2_array = explode(' ', $str2);
+
+    foreach ($str1_array as $word_s) {
+        foreach ($str2_array as $word_t) {
+            if (0 == strcasecmp($word_s, $word_t)) {
+                return strtolower($word_s);
+                break;
+            }
+        }
+    }
+    return NULL;
+});
+
+Route::get('/test2', function () {
+    continuous_sum(15);
+});
+Route::get('zingfront/word-pairs', 'ZingFront\WordPairsController@index')->name('word-pairs.index');
+Route::post('zingfront/word-pairs', 'ZingFront\WordPairsController@store')->name('word-pairs.store');
+Route::get('zingfront/num-sum', 'ZingFront\NumSumController@index')->name('num-sum.index');
+Route::post('zingfront/num-sum', 'ZingFront\NumSumController@store')->name('num-sum.store');
+Route::get('zingfront/jerry', function () {
+    return view('jerry.md');
+});
 
 /*
 Route::get('/', function () {
