@@ -9,6 +9,7 @@
     <title>@yield('title', 'Mi Shop') - 电商 面试使用</title>
     <!-- 样式 -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    @yield('styleCss')
 </head>
 <body>
 <div id="app" class="{{ route_class() }}-page">

@@ -8,7 +8,7 @@
                 @include('zingfront.zingfront')
                 <div class="card-header">
                     <h2 class="text-center">
-                        题 3 (上)
+                        个人简历
                     </h2>
                 </div>
                 <div class="card-body">

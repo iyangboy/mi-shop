@@ -2,37 +2,16 @@
 
 namespace App\Models;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Auth\MustVerifyEmail as MustVerifyEmailTrait;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Contracts\Auth\MustVerifyEmail as MustVerifyEmailContract;
+use Illuminate\Database\Eloquent\Model;
 
-class User extends Authenticatable implements MustVerifyEmailContract
+class ZingFrontMapTravel extends Model
 {
-    use Notifiable, MustVerifyEmailTrait;
+    protected $table = 'zingfront_map_travel';
 
     protected $fillable = [
-        'name', 'email', 'password', 'introduction', 'avatar'
+        'name', // 省份名称
+        'is_travel', // 是否已旅行
+        'remarks' // 备注信息
     ];
 
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
-
-    public function addresses()
-    {
-        return $this->hasMany(UserAddress::class);
-    }
-
-    public function favoriteProducts()
-    {
-        return $this->belongsToMany(Product::class, 'user_favorite_products')
-            ->withTimestamps()
-            ->orderBy('user_favorite_products.created_at', 'desc');
-    }
-
-    public function cartItems()
-    {
-        return $this->hasMany(CartItem::class);
-    }
 }

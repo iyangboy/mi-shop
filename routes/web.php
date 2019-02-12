@@ -9,6 +9,9 @@ Route::get('zingfront/jerry', function () {
     return view('zingfront.jerry_h');
     // return view('zingfront.jerry');
 })->name('zingfront.jerry');
+Route::get('zingfront/map-travel', 'ZingFront\MapTravelController@index')->name('map-travel.index');
+Route::post('zingfront/map-travel-province', 'ZingFront\MapTravelController@province')->name('map-travel-province');
+Route::post('zingfront/map/remarks', 'ZingFront\MapTravelController@update')->name('map.remarks.add');
 
 /*
 Route::get('/', function () {
