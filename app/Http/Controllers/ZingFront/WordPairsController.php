@@ -24,21 +24,20 @@ class WordPairsController extends Controller
     }
 
     // 词语配对
-    public function word_pairs($str1, $str2)
+    public function word_pairs($str_s, $str_t)
     {
-        $str1 = trim($str1);
-        $str2 = trim($str2);
-        if (empty($str1) || empty($str2)) {
+        $str_s = trim($str_s);
+        $str_t = trim($str_t);
+        if (empty($str_s) || empty($str_t)) {
             return '请输入正确的字符串';
         }
-        $str1_array = explode(' ', $str1);
-        $str2_array = explode(' ', $str2);
+        $str_s_array = explode(' ', $str_s);
+        $str_t_array = explode(' ', $str_t);
 
-        foreach ($str1_array as $word_s) {
-            foreach ($str2_array as $word_t) {
-                if ($word_s == $word_t) {
-                    return $word_s;
-                    break;
+        foreach ($str_s_array as $word_s) {
+            foreach ($str_t_array as $word_t) {
+                if (0 === strcasecmp($word_s, $word_t)) {
+                    return strtolower($word_s);
                 }
             }
         }
