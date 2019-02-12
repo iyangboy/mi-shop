@@ -1,7 +1,7 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: Jerry
- * Date: 2019/2/12
- * Time: 9:48
- */
+<div class="card-header">
+    <a href="{{ route('word-pairs.index') }}" class="float">题一</a>
+    <span style="display:inline-block;width: 15px;"></span>
+    <a href="{{ route('num-sum.index') }}" class="float">题二</a>
+    <span style="display:inline-block;width: 15px;"></span>
+    <a href="{{ route('zingfront.jerry') }}" class="float">题三</a>
+</div>

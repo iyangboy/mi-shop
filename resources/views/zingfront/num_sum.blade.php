@@ -5,11 +5,7 @@
     <div class="row">
         <div class="col-md-10 offset-lg-1">
             <div class="card">
-                <div class="card-header">
-                    <a href="{{ route('word-pairs.index') }}" class="float">题一</a>
-                    <span style="display:inline-block;width: 15px;"></span>
-                    <a href="{{ route('num-sum.index') }}" class="float">题二</a>
-                </div>
+                @include('zingfront.zingfront')
                 <div class="card-header">
                     <h2 class="text-center">
                         题 2
@@ -38,6 +34,9 @@
                         </div>
                     </form>
                     <h2 id="word"><span></span></h2>
+                </div>
+                <div class="card-footer">
+                    @include('zingfront.md_num_sum')
                 </div>
             </div>
         </div>

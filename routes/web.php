@@ -6,8 +6,9 @@ Route::post('zingfront/word-pairs', 'ZingFront\WordPairsController@store')->name
 Route::get('zingfront/num-sum', 'ZingFront\NumSumController@index')->name('num-sum.index');
 Route::post('zingfront/num-sum', 'ZingFront\NumSumController@store')->name('num-sum.store');
 Route::get('zingfront/jerry', function () {
-    return view('zingfront.jerry');
-});
+    return view('zingfront.jerry_h');
+    // return view('zingfront.jerry');
+})->name('zingfront.jerry');
 
 /*
 Route::get('/', function () {
