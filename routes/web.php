@@ -12,6 +12,7 @@ Route::get('zingfront/jerry', function () {
 Route::get('zingfront/map-travel', 'ZingFront\MapTravelController@index')->name('map-travel.index');
 Route::post('zingfront/map-travel-province', 'ZingFront\MapTravelController@province')->name('map-travel-province');
 Route::post('zingfront/map/remarks', 'ZingFront\MapTravelController@update')->name('map.remarks.add');
+Route::get('zingfront/map/clear', 'ZingFront\MapTravelController@clear')->name('map.remarks.clear');
 
 /*
 Route::get('/', function () {

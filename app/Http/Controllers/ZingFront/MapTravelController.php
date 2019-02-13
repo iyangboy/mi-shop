@@ -35,4 +35,14 @@ class MapTravelController extends Controller
             ]);
         return [];
     }
+
+    public function clear()
+    {
+        ZingFrontMapTravel::where('is_travel', 1)
+            ->update([
+                'is_travel' => 0,
+                'remarks'   => NULL,
+            ]);
+        return '已清空记录';
+    }
 }

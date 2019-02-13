@@ -8,6 +8,12 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav navbar-left">
+                <li class="nav-item float-left">
+                    <a class="nav-link mt-1" href="{{ route('word-pairs.index') }}">
+                        <b>ZingFront</b></a>
+                </li>
+            </ul>
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
                 <!-- 顶部类目菜单开始 -->
