@@ -25,8 +25,8 @@ class NumSumController extends Controller
     // 词语配对
     function continuous_sum(int $num)
     {
-        if ($num > 10000) {
-            return 'N <= 10000';
+        if ($num < 3 || $num > 10000) {
+            return '3 <= N <= 10000';
         }
         $sum     = 0;     // 累加和数
         $str     = '';    // 输出
