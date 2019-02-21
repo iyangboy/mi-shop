@@ -14,6 +14,14 @@ Route::post('zingfront/map-travel-province', 'ZingFront\MapTravelController@prov
 Route::post('zingfront/map/remarks', 'ZingFront\MapTravelController@update')->name('map.remarks.add');
 Route::get('zingfront/map/clear', 'ZingFront\MapTravelController@clear')->name('map.remarks.clear');
 
+// Transn 传神 面试题
+//Route::get('transn', 'Transn\TransnController@index')->name('transn.index');
+Route::get('transn', function () {
+    return view('transn.index');
+})->name('transn.index');
+Route::get('/', function () {
+    return view('home.home');
+});
 /*
 Route::get('/', function () {
     return view('welcome');
@@ -44,7 +52,8 @@ Route::get('alipay', function () {
 Route::post('seckill_orders', 'OrdersController@seckill')->name('seckill_orders.store')->middleware('random_drop:50');
 
 // Route::get('/', 'PagesController@root')->name('root');
-Route::redirect('/', '/products')->name('root');
+// Route::redirect('/', '/products')->name('root');
+
 Route::get('products', 'ProductsController@index')->name('products.index');
 Route::get('products', 'ProductsController@index')->name('products.index');
 

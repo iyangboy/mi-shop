@@ -10,8 +10,12 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav navbar-left">
                 <li class="nav-item float-left">
-                    <a class="nav-link mt-1" href="{{ route('word-pairs.index') }}">
+                    <a class="nav-link mt-1 float-left" href="{{ route('products.index') }}">
+                        <b>商城应用</b></a>
+                    <a class="nav-link mt-1 float-left" href="{{ route('word-pairs.index') }}">
                         <b>ZingFront</b></a>
+                    <a class="nav-link mt-1 float-left" href="{{ route('transn.index') }}">
+                        <b>Transn 传神</b></a>
                 </li>
             </ul>
             <!-- Left Side Of Navbar -->
